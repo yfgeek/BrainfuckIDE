@@ -1,10 +1,18 @@
 import React from 'react';
 
 class Program extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div>
-                <p>这里是右边</p>
+                {this.props.lists.map((item, id) => {
+                    if (!item.deleted && id === this.props.currentId) {
+                        return <p key={id}>程序：{item.text}</p>;
+                    }
+                })}
             </div>
         )
     }

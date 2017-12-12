@@ -15,7 +15,12 @@ function settings(state = {
     }
 }
 
-function program(state = [], action) {
+function program(state = [{
+    filename: 'HelloWorld.bf',
+    text: '',
+    description: '',
+    deleted: false
+}], action) {
     switch (action.type) {
         case ADD_PROGRAM:
             return [
