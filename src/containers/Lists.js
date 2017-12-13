@@ -19,7 +19,7 @@ class Lists extends React.Component {
             <div>
                 <button href="#" onClick={
                     (e)=>{
-                        dispatch(addProgram('new.bf','',''));
+                        dispatch(addProgram('new.bf','++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.',''));
                     }
                 }>点我添加</button>
                 <button href="#" onClick={
