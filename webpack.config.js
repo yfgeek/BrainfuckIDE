@@ -15,6 +15,9 @@ module.exports = {
         loaders: [{
             test: /\.jsx?$/,
             loaders: ['babel-loader?presets[]=es2015,presets[]=react']
+        }, {
+            test: /\.css$/, // Only .css files
+            loader: 'style!css' // Run both loaders
         }]
     }
 }

@@ -1,16 +1,18 @@
 import React from 'react';
 import Interpreter from "../utils/brainfuck";
+import {UnControlled as CodeMirror} from 'react-codemirror2'
 
 class Program extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            code: '',
             result: '',
         };
     }
 
-    run(text){
-        let i = new Interpreter(text,[]);
+    run(){
+        let i = new Interpreter(this.state.code,[]);
         this.setState(
             {
                 result: i.toString()
@@ -20,18 +22,35 @@ class Program extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="center" className="column">
                 {this.props.lists.map((item, id) => {
                     if (!item.deleted && id === this.props.currentId) {
                         return(
                             <div key={id}>
-                            <button href="#" onClick={
+                            <button onClick={
                                 (e)=>{
-                                    this.run(item.text);
+                                    if(!this.state.code){
+                                        this.setState({
+                                            code: item.text,
+                                        });
+                                    }
+                                    this.run();
                                 }
-                            }>运行</button>
-                                <p>程序：{item.text}</p>
-                                <p>运行结果：{this.state.result}</p>
+                            }>Run</button>
+                                <CodeMirror
+                                    value={item.text}
+                                    options={{
+                                        mode: 'string',
+                                        theme: 'material',
+                                        lineNumbers: true
+                                    }}
+                                    onChange={(editor, data, value) => {
+                                        this.setState({
+                                            code: value,
+                                        });
+                                    }}
+                                />
+                                <p className="result">{this.state.result}</p>
                             </div>
                             );
                     }

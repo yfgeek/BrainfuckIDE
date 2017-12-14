@@ -2,6 +2,7 @@ import React from 'react';
 import Lists from './Lists';
 import Program from './Program';
 import { connect } from 'react-redux';
+import '../public/style.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -13,15 +14,18 @@ class App extends React.Component {
 render() {
     const { dispatch, programs, settings } = this.props;
     return (
-            <div>
+        <div>
+            <div id="container">
+                <Program lists={programs} currentId={this.state.currentId} dispatch={dispatch}  />
                 <Lists lists={programs} currentId={this.state.currentId} dispatch={dispatch} setCurrentId={(id)=>{
                     this.setState({
                         currentId: id,
                     });
                     console.warn(this.state.currentId);
                 }} />
-                <Program lists={programs} currentId={this.state.currentId} dispatch={dispatch}  />
             </div>
+            <div id="footer">#footer</div>
+        </div>
         )
     }
 }

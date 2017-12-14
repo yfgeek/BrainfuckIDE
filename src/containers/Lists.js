@@ -16,17 +16,17 @@ class Lists extends React.Component {
     render() {
         const { dispatch } = this.props;
         return (
-            <div>
+            <div id="left" className="column">
                 <button href="#" onClick={
                     (e)=>{
                         dispatch(addProgram('new.bf','++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.',''));
                     }
-                }>点我添加</button>
+                }>Add</button>
                 <button href="#" onClick={
                     (e)=>{
                         dispatch(removeAllProgram());
                     }
-                }>删除所有</button>
+                }>Delete All</button>
                 {this.props.lists.map((item, id) => {
                 if (!item.deleted) {
                     return <li key={id}>
@@ -35,7 +35,7 @@ class Lists extends React.Component {
                     }}>{item.filename}</a>
                         <a href="#" onClick={(e)=>{
                       dispatch(deleteProgram(id))
-                    }}>删除</a></li>;
+                    }}> Delete</a></li>;
                 }
                 })}
             </div>

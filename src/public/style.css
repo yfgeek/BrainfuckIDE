@@ -1,0 +1,53 @@
+@import '../utils/codemirror/lib/codemirror.css';
+@import '../utils/codemirror/theme/material.css';
+body {
+    min-width: 550px;      /* 2x LC width + RC width */
+    padding:0;
+    margin:0;
+}
+#container {
+    padding-left: 200px;
+}
+#container .column {
+    min-height: 600px;
+    position: relative;
+
+}
+#left {
+    float: left;
+    height:200px;
+    width: 200px;
+    margin-left: -100%;
+    left: -200px;
+    background-color: #353535;
+    color: #d4d4d4;
+}
+
+#left a{
+    color: #d4d4d4;
+}
+
+#center{
+    float: left;
+    height: 100%;
+    width: 100%;
+    background-color: #1e1e1e;
+}
+
+.result{
+    color: #bbbbbb;
+    font-size: 14px;
+}
+
+#footer {
+    clear: both;
+}
+#header,
+#footer {
+    background-color: #c9c9c9;
+}
+
+/*** IE6 Fix ***/
+* html #left {
+    left: 150px;           /* RC width */
+}
