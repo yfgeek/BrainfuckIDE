@@ -1,0 +1,7 @@
+.demo-layout-transparent {
+    background: #2b2b2b;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+    color: white;
+}

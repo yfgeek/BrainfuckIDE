@@ -3,6 +3,9 @@ import Lists from './Lists';
 import Program from './Program';
 import { connect } from 'react-redux';
 import '../public/style.css';
+import '../public/header.css';
+import {addProgram, removeAllProgram} from "../redux/modules/actions";
+import Header from "./Header";
 
 class App extends React.Component {
     constructor(props) {
@@ -15,16 +18,16 @@ render() {
     const { dispatch, programs, settings } = this.props;
     return (
         <div>
-            <div id="container">
-                <Program lists={programs} currentId={this.state.currentId} dispatch={dispatch}  />
-                <Lists lists={programs} currentId={this.state.currentId} dispatch={dispatch} setCurrentId={(id)=>{
-                    this.setState({
-                        currentId: id,
-                    });
-                    console.warn(this.state.currentId);
-                }} />
+            <div className="demo-layout-transparent mdl-layout mdl-js-layout">
+                <Header  dispatch={dispatch} />
+                <Lists lists={programs} currentId={this.state.currentId} dispatch={dispatch}/>
+                    <Program lists={programs} currentId={this.state.currentId} dispatch={dispatch}  setCurrentId={(id)=>{
+                        this.setState({
+                            currentId: id,
+                        });
+                        console.warn(this.state.currentId);
+                    }}  />
             </div>
-            <div id="footer">#footer</div>
         </div>
         )
     }
