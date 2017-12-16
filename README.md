@@ -7,7 +7,7 @@ More features are going to be designed and implemented.
 
 # Snapshot
 
-
+![](snap.png)
 
 # The brainfuck language
 
