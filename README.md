@@ -1,9 +1,21 @@
 # 🐂 Brainfuck-IDE - a brainfuck online interpreter
 
-This is a brainfuck online interpreter based on React. [中文页面](README-CN.md)
+This is a brainfuck online interpreter based on React and Redux. [中文页面](README-CN.md)
+
+Demo: [http://blog.yfgeek.com/BrainfuckIDE/](http://blog.yfgeek.com/BrainfuckIDE)
+
+The main features can be listed as follows.
+
+- [x] Add, edit or delete program
+- [x] Parse the program
+- [x] Highlight the code
+- [x] Delete all the programs
+- [x] Data persistence based on react-persist (LocalStorage)
+- [ ] Add the input sets of the program
+- [ ] Rename the filename
+- [ ] Add the description of the file
 
 More features are going to be designed and implemented.
-
 
 # Snapshot
 
