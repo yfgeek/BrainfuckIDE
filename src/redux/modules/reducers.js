@@ -36,9 +36,7 @@ function program(state = [{
             return [
                 ...state.slice(0, action.index),
                 Object.assign({}, state[action.index], {
-                    filename: action.filename,
                     text: action.text,
-                    description: action.description || '',
                     deleted: false
                 }),
                 ...state.slice(action.index + 1)

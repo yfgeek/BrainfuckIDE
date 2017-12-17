@@ -27,10 +27,36 @@ body {
 }
 
 #left .mdl-list__item{
-    padding: 10px 16px;
+    padding: 5px 12px;
 }
 #left a{
     color: #d4d4d4;
+}
+.logo{
+    margin-top: 5px;
+    font-size: 40px;
+    line-height:40px;
+}
+.file{
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 20px;
+    padding:10px;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.nav_file{
+    margin-top: -3px;
+    margin-right: 5px;
+    font-size:25px;
+}
+
+.list_active{
+    background: #444;
 }
 
 #center{

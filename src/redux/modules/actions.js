@@ -18,8 +18,8 @@ export function addProgram(filename,text,description) {
     return { type: ADD_PROGRAM, filename,text,description }
 }
 
-export function saveProgram(index,filename,text,description) {
-    return { type: SAVE_PROGRAM, index,filename,text,description }
+export function saveProgram(index,text) {
+    return { type: SAVE_PROGRAM, index,text }
 }
 
 export function deleteProgram(index) {

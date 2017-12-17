@@ -12,6 +12,8 @@ class Program extends React.Component {
         };
     }
 
+
+
     run(){
         let i = new Interpreter(this.state.code,[]);
         this.setState(
@@ -43,6 +45,7 @@ class Program extends React.Component {
                                                 this.setState({
                                                     code: value,
                                                 });
+                                                this.props.setCurrentCode(value);
                                             }}
                                         />
                                         <div id="run">
@@ -68,13 +71,13 @@ class Program extends React.Component {
                     </div>
 
                     <div id="left" className="column">
-                        <ul class="left-list mdl-list">
+                        <ul className="left-list mdl-list">
                         {this.props.lists.map((item, id) => {
                             if (!item.deleted) {
                                 return(
-                                                            <li className="mdl-list__item"  key={id}>
+                                                            <li className={"mdl-list__item"} key={id}>
                                                                 <div className="mdl-list__item-primary-content">
-                                                                  <i className="material-icons mdl-list__item-avatar">cloud</i>
+                                                                  <i className="material-icons file">insert_drive_file</i>
                                                                   <a className="mdl-navigation__link"  href="#" onClick={(e)=>{
                                                                       this.props.setCurrentId(id);
                                                                   }}>{item.filename}</a>
