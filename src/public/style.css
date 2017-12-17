@@ -21,6 +21,14 @@ body {
     color: #d4d4d4;
 }
 
+
+#left .left-list{
+    padding:0;
+}
+
+#left .mdl-list__item{
+    padding: 10px 16px;
+}
 #left a{
     color: #d4d4d4;
 }

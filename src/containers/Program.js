@@ -32,7 +32,6 @@ class Program extends React.Component {
                             if (!item.deleted && id === this.props.currentId) {
                                 return(
                                     <div key={id}>
-
                                         <CodeMirror
                                             value={item.text}
                                             options={{
@@ -69,25 +68,22 @@ class Program extends React.Component {
                     </div>
 
                     <div id="left" className="column">
-                        <ul class="demo-list-three mdl-list">
+                        <ul class="left-list mdl-list">
                         {this.props.lists.map((item, id) => {
                             if (!item.deleted) {
                                 return(
-                                                            <li className="mdl-list__item mdl-list__item--three-line"  key={id}>
-                                                                <span className="mdl-list__item-primary-content">
-                                                                  <i className="material-icons mdl-list__item-avatar">person</i>
+                                                            <li className="mdl-list__item"  key={id}>
+                                                                <div className="mdl-list__item-primary-content">
+                                                                  <i className="material-icons mdl-list__item-avatar">cloud</i>
                                                                   <a className="mdl-navigation__link"  href="#" onClick={(e)=>{
                                                                       this.props.setCurrentId(id);
-                                                                  }}>{item.filename} <a href="#" onClick={(e)=>{
-                                                                      dispatch(deleteProgram(id))
-                                                                  }}> Delete</a></a>
-                                                                  <span className="mdl-list__item-text-body">
-
-                                                                  </span>
-                                                                </span>
+                                                                  }}>{item.filename}</a>
+                                                                </div>
                                                                 <span className="mdl-list__item-secondary-content">
-                                                                  <a className="mdl-list__item-secondary-action" href="#">
-                                                                      <i className="material-icons">star</i></a>
+                                                                  <a className="mdl-list__item-secondary-action" href="#" onClick={(e)=>{
+                                                                      dispatch(deleteProgram(id))
+                                                                  }}>
+                                                                      <i className="material-icons">delete</i></a>
                                                                 </span>
                                                             </li>
                                                         );
