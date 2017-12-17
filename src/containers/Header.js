@@ -8,6 +8,7 @@ class Header extends React.Component {
         this.state = {
             currentId: this.props.currentId,
         };
+        this.counter = 0;
     }
 
     componentDidMount() {
@@ -15,7 +16,8 @@ class Header extends React.Component {
 
     addNewProgram(){
         const { dispatch } = this.props;
-        dispatch(addProgram('new.bf','++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.',''));
+        dispatch(addProgram('new-'+ this.counter + '.bf' ,'++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.',''));
+        this.counter++;
     }
 
     removeAllProgram(){
