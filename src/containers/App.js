@@ -20,22 +20,27 @@ class App extends React.Component {
         return (
             <div>
                 <div className="demo-layout-transparent mdl-layout mdl-js-layout">
-                    <Header  dispatch={dispatch}
-                             saveProgram={(e)=>{
-                                 dispatch(saveProgram(this.state.currentId,this.state.currentCode));
-                             }}
+                    <Header
+                        dispatch={dispatch}
+                        saveProgram={(e)=>{
+                            dispatch(saveProgram(this.state.currentId,this.state.currentCode));
+                        }}
                     />
-                    <Program lists={programs} currentId={this.state.currentId} dispatch={dispatch}
-                             setCurrentId={(id)=>{
-                                this.setState({
+                    <Program
+                        dispatch={dispatch}
+                        lists={programs}
+                        currentId={this.state.currentId}
+                        currentCode = {this.state.currentCode}
+                        setCurrentId={(id)=>{
+                            this.setState({
                                     currentId: id,
-                                 });
-                                }}
-                             setCurrentCode={(code)=>{
-                                this.setState({
+                            });
+                        }}
+                        setCurrentCode={(code)=>{
+                            this.setState({
                                 currentCode: code,
-                                });
-                             }}
+                            });
+                        }}
                     />
                 </div>
             </div>

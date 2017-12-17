@@ -59,6 +59,19 @@ body {
     background: #444;
 }
 
+#console{
+    margin-top: -25px;
+    padding: 10px 20px;
+}
+#console .title{
+    font-size: 14px;
+    color: #999999;
+}
+.icon_console{
+    font-size:18px;
+    margin-right: 10px;
+}
+
 #center{
     float: left;
     height: 100%;
