@@ -5,7 +5,7 @@ import App from './containers/App';
 import reducers from './redux/modules/reducers'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import {persistStore, persistCombineReducers} from 'redux-persist';
+import { persistStore, persistCombineReducers} from 'redux-persist';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import storage from 'redux-persist/es/storage' // default: localStorage if web, AsyncStorage if react-native
 

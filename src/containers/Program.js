@@ -30,7 +30,6 @@ class Program extends React.Component {
             <main className="mdl-layout__content">
                 <div id="container">
                     <div id="center" className="column">
-                                    <div>
                                         <CodeMirror
                                             value={this.props.currentCode}
                                             options={{
@@ -61,8 +60,6 @@ class Program extends React.Component {
                                             </div>
                                             <p className="result">{this.state.result}</p>
                                         </div>
-
-                                    </div>
                     </div>
 
                     <div id="left" className="column">
@@ -72,12 +69,15 @@ class Program extends React.Component {
                                 let tmp = id===this.props.currentId?"mdl-list__item list_active":"mdl-list__item";
                                 return(
                                                             <li className={tmp} key={id}>
+
                                                                 <div className="mdl-list__item-primary-content">
+                                                                    <a className="mdl-navigation__link"  href="#" onClick={(e)=>{
+                                                                        this.props.setCurrentId(id);
+                                                                        this.props.setCurrentCode(item.text);
+                                                                    }}>
                                                                   <i className="material-icons file">insert_drive_file</i>
-                                                                  <a className="mdl-navigation__link"  href="#" onClick={(e)=>{
-                                                                      this.props.setCurrentId(id);
-                                                                      this.props.setCurrentCode(item.text);
-                                                                  }}>{item.filename}</a>
+                                                                    <span class="title">{item.filename}</span>
+                                                                    </a>
                                                                 </div>
                                                                 <span className="mdl-list__item-secondary-content">
                                                                   <a className="mdl-list__item-secondary-action" href="#" onClick={(e)=>{
@@ -85,6 +85,7 @@ class Program extends React.Component {
                                                                   }}>
                                                                       <i className="material-icons">delete</i></a>
                                                                 </span>
+
                                                             </li>
                                                         );
                                                     }
